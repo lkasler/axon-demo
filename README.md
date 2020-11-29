@@ -27,9 +27,7 @@ To use an alternate solution use docker [the official docker image](https://hub.
 docker run -d --name axonserver -p 8024:8024 -p 8124:8124 axoniq/axonserver
 ```
 
-In order to check the installation was succeded, browse to "http://localhost:8024/" and we should see the Axon dashboard:
-
-![Axon Dashboard]({{ site.url }}{{ site.baseurl }}/images/axon-installation-1.png)
+In order to check the installation was succeded, browse to "http://localhost:8024/" and we should see the Axon dashboard.
 
 ## Axon Framework: Maven Dependencies
 
