@@ -17,7 +17,11 @@ Where all our events will be stored? In the Event Store running under the Axon S
 
 ## Run Axon Server
 
-We'll use [the official docker image](https://hub.docker.com/r/axoniq/axonserver/) to startup an Axon server instance:
+Download axon server from [Axon Server Download](https://download.axoniq.io/axonserver/AxonServer.zip)
+
+To run unzip and run: ```java -jar axonserver.jar```
+
+To use an alternate solution use docker [the official docker image](https://hub.docker.com/r/axoniq/axonserver/) to startup an Axon server instance:
 
 ```
 docker run -d --name axonserver -p 8024:8024 -p 8124:8124 axoniq/axonserver
@@ -48,8 +52,6 @@ We'll use [the Axon Spring Boot Starter maven dependency](https://mvnrepository.
 ```
 
 This is the easiest way to get warm with Axon. Spring Boot eases the configuration using default components in Axon. For more information, go to [here](https://docs.axoniq.io/reference-guide/1.3-infrastructure-components/spring-boot-autoconfiguration).
-
-Also, Axon provides a very good tutorial or [recipe with Spring Boot](https://docs.axoniq.io/axon-cookbook/basic-recipes/simple-application-using-axon-framework-and-spring-boot).
 
 
 ## Run
