@@ -104,3 +104,18 @@ GET: http://localhost:8080/api/library/1
 ```
 
 
+# Branches 
+
+Initial first version is java, only works from IDE, spring maven plugin missing
+
+```git reset --hard step1_java```
+
+Java step 2, maven spring plugin updated:
+
+```git reset --hard step2_java```
+
+Step 3 with Api refactored to Kotlin, lombok not required
+
+```git reset --hard step3_kotlin```
+
+
