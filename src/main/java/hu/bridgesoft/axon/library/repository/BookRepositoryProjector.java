@@ -1,15 +1,15 @@
 package hu.bridgesoft.axon.library.repository;
 
-import java.util.List;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-
-import hu.bridgesoft.axon.library.api.events.BookCreatedEvent;
+import hu.bridgesoft.axon.library.api.BookCreatedEvent;
+import hu.bridgesoft.axon.library.api.GetBooksQuery;
 import hu.bridgesoft.axon.library.models.BookBean;
-import hu.bridgesoft.axon.library.api.queries.GetBooksQuery;
 import org.axonframework.eventhandling.EventHandler;
 import org.axonframework.queryhandling.QueryHandler;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Service
 public class BookRepositoryProjector {
@@ -21,7 +21,7 @@ public class BookRepositoryProjector {
 	}
 
 	@EventHandler
-	public void addBook(BookCreatedEvent event) throws Exception {
+	public void addBook(BookCreatedEvent event) {
 		BookEntity book = new BookEntity();
 		book.setIsbn(event.getIsbn());
 		book.setLibraryId(event.getLibraryId());

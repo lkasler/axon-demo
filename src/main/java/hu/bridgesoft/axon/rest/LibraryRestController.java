@@ -1,25 +1,21 @@
 package hu.bridgesoft.axon.rest;
 
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-
+import hu.bridgesoft.axon.library.aggregate.Library;
+import hu.bridgesoft.axon.library.api.GetBooksQuery;
+import hu.bridgesoft.axon.library.api.GetLibraryQuery;
+import hu.bridgesoft.axon.library.api.RegisterBookCommand;
+import hu.bridgesoft.axon.library.api.RegisterLibraryCommand;
+import hu.bridgesoft.axon.library.models.BookBean;
+import hu.bridgesoft.axon.library.models.LibraryBean;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
 import org.axonframework.queryhandling.QueryGateway;
-import hu.bridgesoft.axon.library.aggregate.Library;
-import hu.bridgesoft.axon.library.api.commands.RegisterBookCommand;
-import hu.bridgesoft.axon.library.api.commands.RegisterLibraryCommand;
-import hu.bridgesoft.axon.library.models.BookBean;
-import hu.bridgesoft.axon.library.models.LibraryBean;
-import hu.bridgesoft.axon.library.api.queries.GetBooksQuery;
-import hu.bridgesoft.axon.library.api.queries.GetLibraryQuery;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 @RestController
 public class LibraryRestController {

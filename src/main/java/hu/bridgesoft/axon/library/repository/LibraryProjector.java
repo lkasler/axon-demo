@@ -1,7 +1,7 @@
 package hu.bridgesoft.axon.library.repository;
 
 import hu.bridgesoft.axon.library.aggregate.Library;
-import hu.bridgesoft.axon.library.api.queries.GetLibraryQuery;
+import hu.bridgesoft.axon.library.api.GetLibraryQuery;
 import org.axonframework.modelling.command.Repository;
 import org.axonframework.queryhandling.QueryHandler;
 import org.springframework.beans.factory.annotation.Autowired;

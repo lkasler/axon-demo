@@ -3,15 +3,15 @@ package hu.bridgesoft.axon.library.aggregate;
 import java.util.ArrayList;
 import java.util.List;
 
-import hu.bridgesoft.axon.library.api.commands.RegisterBookCommand;
-import hu.bridgesoft.axon.library.api.events.BookCreatedEvent;
-import hu.bridgesoft.axon.library.api.events.LibraryCreatedEvent;
+import hu.bridgesoft.axon.library.api.BookCreatedEvent;
+import hu.bridgesoft.axon.library.api.LibraryCreatedEvent;
+import hu.bridgesoft.axon.library.api.RegisterBookCommand;
+import hu.bridgesoft.axon.library.api.RegisterLibraryCommand;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
-import hu.bridgesoft.axon.library.api.commands.RegisterLibraryCommand;
 import org.springframework.util.Assert;
 
 @Aggregate
