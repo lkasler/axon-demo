@@ -68,6 +68,12 @@ We can run our application as an usual Spring Boot application. If you see the f
 
 This message means we cannot connect with the Axon server. Double check the Axon server is up and running and/or go to the Axon dashboard in the browser. 
 
+## Test with SOAPUI or Swagger UI
+
+The swagger UI url is:
+
+```http://localhost:8080/swagger-ui/index.html#```
+
 - Add a library:
 
 ```
