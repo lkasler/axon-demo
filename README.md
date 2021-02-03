@@ -126,6 +126,6 @@ Step 3 with Api refactored to Kotlin, lombok not required
 
 Step 4 with Api refactored to Kotlin, lombok not required, readme updated
 
-```git reset --hard step3_kotlin```
+```git reset --hard step4_kotlin```
 
 
