@@ -1,6 +1,5 @@
 package hu.bridgesoft.axon.rest;
 
-import hu.bridgesoft.axon.library.aggregate.Library;
 import hu.bridgesoft.axon.library.api.GetBooksQuery;
 import hu.bridgesoft.axon.library.api.GetLibraryQuery;
 import hu.bridgesoft.axon.library.api.RegisterBookCommand;
@@ -11,6 +10,7 @@ import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
 import org.axonframework.queryhandling.QueryGateway;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,6 +18,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 @RestController
+@Profile("rest")
 public class LibraryRestController {
 
 	private final CommandGateway commandGateway;
@@ -36,8 +37,8 @@ public class LibraryRestController {
 	}
 
 	@GetMapping("/api/library/{library}")
-	public Library getLibrary(@PathVariable Integer library) throws InterruptedException, ExecutionException {
-		CompletableFuture<Library> future = queryGateway.query(new GetLibraryQuery(library), Library.class);
+	public LibraryBean getLibrary(@PathVariable Integer library) throws InterruptedException, ExecutionException {
+		CompletableFuture<LibraryBean> future = queryGateway.query(new GetLibraryQuery(library), LibraryBean.class);
 		return future.get();
 	}
 

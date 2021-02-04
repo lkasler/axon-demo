@@ -5,6 +5,7 @@ import hu.bridgesoft.axon.library.api.GetBooksQuery;
 import hu.bridgesoft.axon.library.models.BookBean;
 import org.axonframework.eventhandling.EventHandler;
 import org.axonframework.queryhandling.QueryHandler;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
+@Profile("query")
 public class BookRepositoryProjector {
 
 	private final BookRepository bookRepository;

@@ -68,6 +68,20 @@ We can run our application as an usual Spring Boot application. If you see the f
 
 This message means we cannot connect with the Axon server. Double check the Axon server is up and running and/or go to the Axon dashboard in the browser. 
 
+## Run with profiles
+
+The following profiles were created: command, query, rest
+By default all profiles are enabled, you can test location transperency of Axon by individually activating spring prfiles via:
+
+java -Dspring.profiles.active=command axon-bookstore-demo-0.0.1-SNAPSHOT.jar
+
+java -Dspring.profiles.active=query axon-bookstore-demo-0.0.1-SNAPSHOT.jar
+
+java -Dspring.profiles.active=rest axon-bookstore-demo-0.0.1-SNAPSHOT.jar
+
+To enable random port usage for starting application multiple times by different ports you can use -Dserver.port=0
+
+
 ## Test with SOAPUI or Swagger UI
 
 The swagger UI url is:

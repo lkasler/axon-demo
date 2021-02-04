@@ -12,9 +12,11 @@ import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
+import org.springframework.context.annotation.Profile;
 import org.springframework.util.Assert;
 
 @Aggregate
+@Profile("command")
 public class Library {
 
 	@AggregateIdentifier
