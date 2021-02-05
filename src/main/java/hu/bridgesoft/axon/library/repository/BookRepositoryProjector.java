@@ -5,6 +5,7 @@ import hu.bridgesoft.axon.library.api.GetBooksQuery;
 import hu.bridgesoft.axon.library.models.BookBean;
 import org.axonframework.eventhandling.EventHandler;
 import org.axonframework.queryhandling.QueryHandler;
+import org.axonframework.queryhandling.QueryUpdateEmitter;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -18,8 +19,11 @@ public class BookRepositoryProjector {
 
 	private final BookRepository bookRepository;
 
-	public BookRepositoryProjector(BookRepository bookRepository) {
+	private final QueryUpdateEmitter updateEmitter;
+
+	public BookRepositoryProjector(BookRepository bookRepository, QueryUpdateEmitter updateEmitter) {
 		this.bookRepository = bookRepository;
+		this.updateEmitter = updateEmitter;
 	}
 
 	@EventHandler
@@ -29,6 +33,7 @@ public class BookRepositoryProjector {
 		book.setLibraryId(event.getLibraryId());
 		book.setTitle(event.getTitle());
 		bookRepository.save(book);
+		updateEmitter.emit(GetBooksQuery.class, query -> query.getLibraryId() == event.getLibraryId(), book);
 	}
 
 	@QueryHandler

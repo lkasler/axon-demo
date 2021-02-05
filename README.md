@@ -137,6 +137,11 @@ GET: http://localhost:8080/api/library/1/book
 GET: http://localhost:8080/api/library/1
 ```
 
+- To test subscription to new book adding
+
+```
+GET: http://localhost:8080/api/library/1/book/subscribe
+```
 
 # Branches 
 
@@ -159,4 +164,9 @@ Step 4 with Api refactored to Kotlin, lombok not required, readme updated
 Step 5 demonstrate Axon location transparency with Spring propfiles (command, query, rest)
 
 ```git reset --hard step5_axon_profiles```
+
+Step 6 Subscription query (new book)
+
+```git reset --hard step6_subscription_query```
+
 
