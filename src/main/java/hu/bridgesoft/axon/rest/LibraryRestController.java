@@ -49,7 +49,7 @@ public class LibraryRestController {
 	}
 
 	@GetMapping("/api/library/{library}/book")
-	public List<BookBean> addBook(@PathVariable Integer library) throws InterruptedException, ExecutionException {
+	public List<BookBean> getBook(@PathVariable Integer library) throws InterruptedException, ExecutionException {
 		return queryGateway.query(new GetBooksQuery(library), ResponseTypes.multipleInstancesOf(BookBean.class)).get();
 	}
 

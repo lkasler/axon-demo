@@ -15,7 +15,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.function.Function;
 
 @Service
-@Profile("query")
+@Profile("command")
 public class LibraryProjector {
 
 	@Autowired

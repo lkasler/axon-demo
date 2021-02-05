@@ -81,6 +81,16 @@ java -Dspring.profiles.active=rest axon-bookstore-demo-0.0.1-SNAPSHOT.jar
 
 To enable random port usage for starting application multiple times by different ports you can use -Dserver.port=0
 
+To run in Intellij make a clone of running AxonApplication instance, in the Modify Options choose 'Allow multiple instances', and
+create 3 different running for 3 profiles choosing in the Modify Options the VM settings and pasting:
+
+-Dspring.profiles.active=command -Dserver.port=0
+
+-Dspring.profiles.active=query -Dserver.port=0
+
+-Dspring.profiles.active=rest -Dserver.port=0
+
+
 
 ## Test with SOAPUI or Swagger UI
 
