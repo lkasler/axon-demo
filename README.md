@@ -156,4 +156,7 @@ Step 4 with Api refactored to Kotlin, lombok not required, readme updated
 
 ```git reset --hard step4_kotlin```
 
+Step 5 demonstrate Axon location transparency with Spring propfiles (command, query, rest)
+
+```git reset --hard step5_axon_profiles```
 
