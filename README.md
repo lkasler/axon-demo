@@ -98,6 +98,10 @@ The swagger UI url is:
 
 ```http://localhost:8080/swagger-ui/index.html#```
 
+Swagger docs url:
+
+```http://localhost:8080/v3/api-docs```
+
 - Add a library:
 
 ```
